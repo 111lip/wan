@@ -11,7 +11,7 @@ def get_movie_info(url):
     }
 
     try:
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=10,verify=False)
         response.raise_for_status()
         response.encoding = response.apparent_encoding
         return response.text
